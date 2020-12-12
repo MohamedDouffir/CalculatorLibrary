@@ -29,9 +29,9 @@ jobs:
           command: |
             . venv/bin/activate
             pytest -v --cov=calculator
-      # Step 5: Exercise markers
+      # Step 5: Exercise one single marker at a time
       - run:
-          name: run pytest with combination of markers
+          name: Markers- run pytest with a single marker at a time
           command: |
             . venv/bin/activate
             echo "Run with smoke marker"
@@ -46,4 +46,15 @@ jobs:
             pytest -m power -v 
             echo "Run with trig marker"
             pytest -m trig -v 
-    
+      # Step 5: Exercise combination of markers
+      - run:
+          name: Markers- run pytest with combination of markers
+          command: |
+            . venv/bin/activate
+            echo "Only run tests that are marked smoke and add"
+            pytest -m "smoke and add" -v 
+            echo "Only run tests that are marked smoke or sub"
+            pytest -m "smoke or sub" -v 
+            echo "Runn all tests except those marked as trig"
+            pytest -m "not trig" -v 
+            
