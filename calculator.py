@@ -1,3 +1,4 @@
+import math
 """
 Calculator library containing basic math operations.
 """
@@ -17,3 +18,7 @@ def multiply(first_term, second_term):
 
 def divide(first_term, second_term):
     return first_term / second_term
+
+
+def square_root(aNumber):
+    return math.sqrt(aNumber)
