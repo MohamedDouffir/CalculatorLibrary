@@ -26,3 +26,15 @@ def square_root(aNumber):
 
 def power(base, exponent):
     return math.pow(base, exponent)
+
+
+def cosine(x):
+    """ It returns the cosine of x radians using
+    Python math module method cos() """
+    return math.cos(x)
+
+
+def sine(x):
+    """ It returns the sine of x in radians using
+    Python math module method sin() """
+    return math.sin(x)
