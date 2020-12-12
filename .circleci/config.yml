@@ -23,10 +23,27 @@ jobs:
           command: |
             . venv/bin/activate
             flake8 --exclude=venv* --statistics
-      # Step 3: run linter and tests
+      # Step 4: run full test suite with code coverage
       - run:
           name: run full test suite with code coverage
           command: |
             . venv/bin/activate
             pytest -v --cov=calculator
+      # Step 5: Exercise markers
+      - run:
+          name: run pytest with combination of markers
+          command: |
+            . venv/bin/activate
+            echo "Run with smoke marker"
+            pytest -m smoke -v 
+            echo "Run with add marker"
+            pytest -m add -v 
+            echo "Run with mult marker"
+            pytest -m mult -v 
+            echo "Run with div marker"
+            pytest -m div -v 
+            echo "Run with power marker"
+            pytest -m power -v 
+            echo "Run with trig marker"
+            pytest -m trig -v 
     
