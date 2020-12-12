@@ -8,6 +8,7 @@ from pytest import mark
 
 class TestCalculator:
 
+    @mark.smoke
     @mark.add
     def test_addition1(self):
         assert 4 == calculator.add(2, 2)
@@ -16,6 +17,7 @@ class TestCalculator:
     def test_addition2(self):
         assert 20 == calculator.add(14, 6)
 
+    @mark.smoke
     @mark.sub
     def test_subtraction1(self):
         assert 2 == calculator.subtract(4, 2)
@@ -24,6 +26,7 @@ class TestCalculator:
     def test_subtraction2(self):
         assert 6 == calculator.subtract(20, 14)
 
+    @mark.smoke
     @mark.mult
     def test_multiplication1(self):
         assert 100 == calculator.multiply(10, 10)
