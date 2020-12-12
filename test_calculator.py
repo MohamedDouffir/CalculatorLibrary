@@ -21,3 +21,6 @@ class TestCalculator:
 
     def test_square_root(self):
         assert 5 == calculator.square_root(25)
+
+    def test_power(self):
+        assert 8 == calculator.power(2, 3)

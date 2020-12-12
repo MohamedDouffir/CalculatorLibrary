@@ -22,3 +22,7 @@ def divide(first_term, second_term):
 
 def square_root(aNumber):
     return math.sqrt(aNumber)
+
+
+def power(base, exponent):
+    return math.pow(base, exponent)
