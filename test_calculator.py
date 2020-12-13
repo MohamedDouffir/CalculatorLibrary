@@ -28,8 +28,12 @@ class TestCalculator:
 
     @mark.smoke
     @mark.mult
-    def test_multiplication1(self):
-        assert 100 == calculator.multiply(10, 10)
+    def test_multiplication1(self, mult_testdata):
+        d = mult_testdata
+        for p in d.keys():
+            v1 = d[p][0]
+            v2 = d[p][1]
+            assert p == calculator.multiply(v1, v2)
 
     @mark.mult
     def test_multiplication2(self):
@@ -48,8 +52,12 @@ class TestCalculator:
         assert 5 == calculator.square_root(25)
 
     @mark.power
-    def test_power(self):
-        assert 8 == calculator.power(2, 3)
+    def test_power(self, power_testdata):
+        d = power_testdata
+        for p in d.keys():
+            base = d[p][0]
+            expo = d[p][1]
+            assert p == calculator.power(base, expo)
 
     @mark.trig
     def test_cosine(self):
